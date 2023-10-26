@@ -136,7 +136,7 @@ async def handle(reader, writer):
         logger.debug(f"[{i_port:5}] {cert.get('subjectAltName', ())=}")
         if setting.config['check_hostname'] is not False:
             try:
-                match_hostname(cert, host if server_hostname_key is None else host if setting.config['alter_hostname'][server_hostname_key] == 'self' else setting.config['alter_hostname'][server_hostname_key])
+                match_hostname(cert, host if server_hostname_key is None else host if host == server_hostname else setting.config['alter_hostname'][server_hostname_key])
             except ssl.CertificateError as err:
                 logger.warning(f'[{i_port:5}] {err}')
                 return
