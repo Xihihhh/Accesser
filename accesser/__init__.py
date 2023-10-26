@@ -124,16 +124,19 @@ async def handle(reader, writer):
         else:
             writer._transport = await writer._loop.start_tls(writer.transport, writer._protocol, context, server_side=True)
         server_hostname_key = next(filter(lambda h:fnmatch.fnmatchcase(host, h), setting.config['alter_hostname']), None)
-        server_hostname = '' if server_hostname_key is None else setting.config['alter_hostname'][server_hostname_key]
+        server_hostname = '' if server_hostname_key is None else host if setting.config['alter_hostname'][server_hostname_key] == 'self' else setting.config['alter_hostname'][server_hostname_key]
         logger.debug(f'[{i_port:5}] {server_hostname=}')
         remote_context = ssl.create_default_context()
         remote_context.check_hostname = False
-        remote_reader, remote_writer = await asyncio.open_connection(remote_ip, port, ssl=remote_context, server_hostname=server_hostname)
+        if server_hostname == host:
+            remote_reader, remote_writer = await asyncio.open_connection(remote_ip, port, ssl=remote_context)
+        else:
+            remote_reader, remote_writer = await asyncio.open_connection(remote_ip, port, ssl=remote_context, server_hostname=server_hostname)
         cert = remote_writer.get_extra_info('peercert')
         logger.debug(f"[{i_port:5}] {cert.get('subjectAltName', ())=}")
         if setting.config['check_hostname'] is not False:
             try:
-                match_hostname(cert, host if server_hostname_key is None else setting.config['alter_hostname'][server_hostname_key])
+                match_hostname(cert, host if server_hostname_key is None else host if setting.config['alter_hostname'][server_hostname_key] == 'self' else setting.config['alter_hostname'][server_hostname_key])
             except ssl.CertificateError as err:
                 logger.warning(f'[{i_port:5}] {err}')
                 return
