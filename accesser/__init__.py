@@ -128,10 +128,7 @@ async def handle(reader, writer):
         logger.debug(f'[{i_port:5}] {server_hostname=}')
         remote_context = ssl.create_default_context()
         remote_context.check_hostname = False
-        if server_hostname == host:
-            remote_reader, remote_writer = await asyncio.open_connection(remote_ip, port, ssl=remote_context)
-        else:
-            remote_reader, remote_writer = await asyncio.open_connection(remote_ip, port, ssl=remote_context, server_hostname=server_hostname)
+        remote_reader, remote_writer = await asyncio.open_connection(remote_ip, port, ssl=remote_context, server_hostname=server_hostname)
         cert = remote_writer.get_extra_info('peercert')
         logger.debug(f"[{i_port:5}] {cert.get('subjectAltName', ())=}")
         if setting.config['check_hostname'] is not False:
