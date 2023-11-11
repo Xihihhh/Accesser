@@ -44,7 +44,8 @@ var domains = {
   "vimeo.com": 1,
   "wenxuecity.com": 1,
   "wikipedia.org": 1,
-  "onedrive.live.com": 1
+  "onedrive.live.com": 1,
+  "scratch.mit.edu": 1
 };
 
 var shexps = {
