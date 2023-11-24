@@ -1,220 +1,109 @@
 var domains = {
-  "apkmirror.com": 1,
-  "appledaily.com.tw": 1,
-  "artstation.com": 1,
-  "bbc.com": 1,
-  "bbc.co.uk": 1,
-  "bbci.co.uk": 1,
-  "disqus.com": 1,
-  "dropbox.com": 1,
-  "dw.com": 1,
-  "e-hentai.org": 1,
-  "exhentai.org": 1,
-  "euronews.com": 1,
-  "ftchinese.com": 1,
-  "github.com": 1,
-  "github.io": 1,
-  "imgur.com": 1,
-  "instagram.com": 1,
-  "japantimes.co.jp": 1,
-  "kobo.com": 1,
-  "medium.com": 1,
-  "mega.nz": 1,
-  "mega.io": 1,
-  "mega.co.nz": 1,
-  "nicovideo.jp": 1,
-  "nyaa.si": 1,
-  "nytimes.com": 1,
-  "nyt.com": 1,
-  "phncdn.com": 1,
-  "pinterest.com": 1,
-  "pinimg.com": 1,
-  "pixiv.net": 1,
-  "pixivsketch.net": 1,
-  "fanbox.cc": 1,
-  "quora.com": 1,
-  "redd.it": 1,
-  "reddit.com": 1,
-  "redditmedia.com": 1,
-  "startpage.com": 1,
-  "steamcommunity.com": 1,
-  "steampowered.com": 1,
-  "theepochtimes.com": 1,
-  "thetvdb.com": 1,
-  "uptodown.com": 1,
-  "vimeo.com": 1,
-  "wenxuecity.com": 1,
-  "mediawiki.org": 1,
-  "wikipedia.org": 1,
-  "wikimedia.org": 1,
-  "wikiquote.org": 1,
-  "wikinews.org": 1,
-  "wikiversity.org": 1,
-  "wiktionary.org": 1,
-  "wikibooks.org": 1,
-  "wikivoyage.org": 1,
-  "wikisource.org": 1,
-  "wikidata.org": 1,
-  "wmflabs.org": 1,
-  "wikifunctions.org": 1,
-  "wmfusercontent.org": 1,
-  "w.wiki": 1,
-  "duckduckgo.com": 1,
-  "ddg.gg": 1,
-  "ddg.co": 1,
-  "duck.com": 1,
-  "konachan.com": 1,
-  "ivonblog.com": 1,
-  "archive.today": 1,
-  "archive.ph": 1,
-  "archive.li": 1,
-  "archive.is": 1,
-  "archive.vn": 1,
-  "archive.fo": 1,
-  "archive.md": 1,
-  "v2ex.com": 1,
-  "discord.com": 1,
-  "discordapp.com": 1,
-  "discord.gg": 1,
-  "openai.com": 1,
-  "amazon.co.jp": 1,
-  "onedrive.live.com": 1,
-  "yahoo.co.jp": 1,
-  "yearbook.cna.com.tw": 1,
-  "twitch.tv": 1,
-  "tumblr.co": 1,
-  "tumblr.com": 1,
-  "softonic.com": 1,
-  "dmhy.org": 1,
-  "tokyotosho.info": 1,
-  "acg.rip": 1,
-  "yt.artemislena.eu": 1,
-  "invidious.esmailelbob.xyz": 1,
-  "invidious.tiekoetter.com": 1,
-  "invidious.privacydev.net": 1,
-  "par1.iv.ggtyler.dev": 1,
-  "invidious.flokinet.to": 1,
-  "invidious.io.lol": 1,
-  "invidious.protokolla.fi": 1,
-  "inv.makerlab.tech": 1,
-  "invidious.fdn.fr": 1,
-  "tokhmi.xyz": 1,
-  "vid.puffyan.us": 1,
-  "invidious.slipfox.xyz": 1,
-  "inv.pistasjis.net": 1,
-  "iv.melmac.space": 1,
-  "invidious.0011.lt": 1,
-  "inv.tux.pizza": 1,
-  "invidious.asir.dev": 1,
-  "invidious.private.coffee": 1,
-  "openstreetmap.org": 1,
-  "proxitok.pabloferreiro.es": 1,
-  "f-droid.org": 1,
-  "about.me": 1,
-  "as.mr": 1,
-  "dlsite.com": 1,
-  "proton.me": 1,
-  "mangabz.com": 1,
-  "xmanhua.com": 1,
-  "godamanga.com": 1,
-  "bootstrapcdn.com": 1,
-  "platform.twitter.com": 1,
-  "geph.io": 1,
-  "thepiratebay.org": 1,
-  "bandcamp.com": 1,
-  "youmaker.com": 1,
-  "vivaldi.com": 1,
-  "feeder.co": 1,
-  "gravatar.com": 1,
-  "flickr.com": 1,
-  "find.looks.wang": 1,
-  "cn1lib.is": 1,
-  "hub.docker.com": 1,
-  "change.org": 1,
-  "rabb.it": 1,
-  "ooni.io": 1,
-  "scratch.mit.edu": 1,
-  "south-plus.net": 1,
-  "white-plus.net": 1,
-  "level-plus.net": 1,
-  "summer-plus.net": 1,
-  "spring-plus.net": 1,
-  "snow-plus.net": 1,
-  "south-plus.org": 1,
-  "lostlife.club": 1,
-  "google.com": 1,
-  "google.com.hk": 1,
-  "google.dk": 1,
-  "google.co.kr": 1,
-  "gstatic.com": 1,
-  "googleapis.com": 1,
-  "translate.goog": 1,
-  "youtube.com": 1,
-  "youtube-nocookie.com": 1,
-  "blogger.com": 1,
-  "googlevideo.com": 1,
-  "page.link": 1,
-  "withgoogle.com": 1,
-  "goo.gl": 1,
-  "g.co": 1,
-  "cdnn.mohammadfx.cam": 1,
-  "tu.snzim.click": 1,
-  "mastodon.social": 1,
-  "singlelogin.re": 1
-};
-
-var shexps = {
-  "*://steamcommunity-a.akamaihd.net/*": 1,
-  "*://steamuserimages-a.akamaihd.net/*": 1,
-  "*://*.hls.ttvnw.net/*": 1,
-  "*://i.pximg.net/*": 1,
-  "*://*.no-logs.com/*": 1,
-  "*://*.dmc.nico/*": 1,
-  "*://media.discordapp.net/*": 1,
-  "*://*.redditstatic.com/*": 1,
-  "*://*.dropboxapi.com/*": 1,
-  "*://*.dropboxusercontent.com/*": 1,
-  "*://*.githubassets.com/*": 1,
-  "*://*.githubusercontent.com/*": 1,
-  "*://*.googleusercontent.com/*": 1,
-  "*://youtu.be/*": 1,
-  "*://*.ytimg.com/*": 1,
-  "*://*.ggpht.com/*": 1
-};
-
-var proxy = "PROXY {{host}}:{{port}};";
-
-var direct = 'DIRECT;';
-
-var hasOwnProperty = Object.hasOwnProperty;
-
-function shExpMatchs(str, shexps) {
-    for (shexp in shexps) {
-        if (shExpMatch(str, shexp)) {
-            return true;
-        }
-    }
-    return false;
-}
-
-function FindProxyForURL(url, host) {
-    var suffix;
-    var pos = host.lastIndexOf('.');
-    pos = host.lastIndexOf('.', pos - 1);
-    while(1) {
-        if (pos <= 0) {
-            if (hasOwnProperty.call(domains, host)) {
-                return proxy;
-            } else if (shExpMatchs(url, shexps)) {
-                return proxy;
-            } else {
-                return direct;
-            }
-        }
-        suffix = host.substring(pos + 1);
-        if (hasOwnProperty.call(domains, suffix)) {
-            return proxy;
-        }
-        pos = host.lastIndexOf('.', pos - 1);
-    }
-}
+    "apkmirror.com": 1,
+    "appledaily.com": 1,
+    "archiveofourown.org": 1,
+    "artstation.com": 1,
+    "bbc.com": 1,
+    "disqus.com": 1,
+    "dmc.nico": 1,
+    "dropbox.com": 1,
+    "dropboxapi.com": 1,
+    "dropbox-dns.com": 1,
+    "dw.com": 1,
+    "e-hentai.org": 1,
+    "epochtimes.com": 1,
+    "euronews.com": 1,
+    "exhentai.org": 1,
+    "ftchinese.com": 1,
+    "github.com": 1,
+    "githubassets.com": 1,
+    "githubusercontent.com": 1,
+    "imgur.com": 1,
+    "instagram.com": 1,
+    "i.pximg.net": 1,
+    "kobo.com": 1,
+    "medium.com": 1,
+    "mega.nz": 1,
+    "nicovideo.jp": 1,
+    "nyaa.si": 1,
+    "nytimes.com": 1,
+    "phncdn.com": 1,
+    "pinterest.com": 1,
+    "pixiv.net": 1,
+    "pixivsketch.net": 1,
+    "quora.com": 1,
+    "redd.it": 1,
+    "reddit.com": 1,
+    "redditmedia.com": 1,
+    "redditstatic.com":1,
+    "startpage.com": 1,
+    "steamcommunity.com": 1,
+    "theepochtimes.com": 1,
+    "thetvdb.com": 1,
+    "tumblr.com": 1,
+    "tumblr.co": 1,
+    "uptodown.com": 1,
+    "vimeo.com": 1,
+    "wenxuecity.com": 1,
+    "wikipedia.org": 1,
+    "scratch.mit.edu": 1,
+    "mastodon.social": 1,
+    "singlelogin.re": 1
+  };
+  
+  var shexps = {
+    "*://api.openai.com/*": 1,
+    "*://steamcommunity-a.akamaihd.net/*": 1,
+    "*://steamuserimages-a.akamaihd.net/*": 1,
+    "*://*.amazon.co.jp/*": 1,
+    "*://*onedrive.live.com/*": 1,
+    "*://*.bbc.co.uk/*": 1,
+    "*://*.bbci.co.uk/*": 1,
+    "*://*.japantimes.co.jp/*": 1,
+    "*://*.yahoo.co.jp/*": 1,
+    "*://*.cna.com.tw/*": 1,
+    "*://*.discord.com/*": 1,
+    "*://*.discordapp.com/*": 1,
+    "*://*.discord.gg/*": 1,
+    "*://media.discordapp.net/*": 1,
+    "*://*.duckduckgo.com/*": 1,
+    "*://*.v2ex.com/*":1,
+    "*://*.twitch.tv/*":1
+  };
+  
+  var proxy = "PROXY {{host}}:{{port}};";
+  
+  var direct = 'DIRECT;';
+  
+  var hasOwnProperty = Object.hasOwnProperty;
+  
+  function shExpMatchs(str, shexps) {
+      for (shexp in shexps) {
+          if (shExpMatch(str, shexp)) {
+              return true;
+          }
+      }
+      return false;
+  }
+  
+  function FindProxyForURL(url, host) {
+      var suffix;
+      var pos = host.lastIndexOf('.');
+      pos = host.lastIndexOf('.', pos - 1);
+      while(1) {
+          if (pos <= 0) {
+              if (hasOwnProperty.call(domains, host)) {
+                  return proxy;
+              } else if (shExpMatchs(url, shexps)) {
+                  return proxy;
+              } else {
+                  return direct;
+              }
+          }
+          suffix = host.substring(pos + 1);
+          if (hasOwnProperty.call(domains, suffix)) {
+              return proxy;
+          }
+          pos = host.lastIndexOf('.', pos - 1);
+      }
+  }
