@@ -21,6 +21,7 @@ import subprocess
 import locale
 
 from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.serialization import pkcs12
 
 from . import setting
 from . import certmanager as cm
