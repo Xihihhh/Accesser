@@ -126,7 +126,7 @@ async def handle(reader, writer):
         else:
             writer._transport = await writer._loop.start_tls(writer.transport, writer._protocol, context, server_side=True)
         server_hostname_key = next(filter(lambda h:fnmatch.fnmatchcase(host, h), setting.config['alter_hostname']), None)
-        server_hostname = '' if server_hostname_key is None else setting.config['alter_hostname'][server_hostname_key]
+        server_hostname = '' if server_hostname_key is None else host if setting.config['alter_hostname'][server_hostname_key] == 'self' else setting.config['alter_hostname'][server_hostname_key]
         logger.debug(f'[{i_port:5}] {server_hostname=}')
         remote_context = ssl.create_default_context()
         remote_context.check_hostname = False
@@ -138,7 +138,7 @@ async def handle(reader, writer):
         if cert_verify_key is not None:
             cert_verify_list = setting.config['cert_verify'][cert_verify_key]
             cert_policy = False if cert_verify_list is False else True
-        elif server_hostname_key is not None:
+        elif server_hostname_key is not None and setting.config['alter_hostname'][server_hostname_key] != 'self':
             cert_verify_list = [setting.config['alter_hostname'][server_hostname_key]]
             cert_policy = setting.config['check_hostname']
         else:
