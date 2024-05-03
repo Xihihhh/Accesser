@@ -135,7 +135,7 @@ async def handle(reader, writer):
         cert_message = f"subjectAltName: {cert.get('subjectAltName', ())}, subject: {cert.get('subject', ())}"
         logger.debug(f"[{i_port:5}] {cert_message}.")
         cert_verify_key = next(filter(lambda h:fnmatch.fnmatchcase(host, h), setting.config.get('cert_verify', ())), None)
-        if cert_verify_key is not None and setting.config['cert_verify'][cert_verify_key] != 'self':
+        if cert_verify_key is not None:
             cert_verify_list = setting.config['cert_verify'][cert_verify_key]
             cert_policy = False if cert_verify_list is False else True
         elif server_hostname_key is not None and setting.config['alter_hostname'][server_hostname_key] != 'self':
