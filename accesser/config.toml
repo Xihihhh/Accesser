@@ -1,5 +1,5 @@
-# 这是Accesser的配置文件，保存到程序工作目录后重启程序生效。
-# This is the configuration file of Accesser, save it to the program working directory and restart the program to take effect.
+# 这是Accesser的配置文件，保存到程序 ⚠工作目录⚠ 后重启程序生效。
+# This is the configuration file of Accesser, save it to the program ⚠ working directory ⚠ and restart the program to take effect.
 
 # 是否校验证书域名？false 不进行校验，true 进行宽松的校验（如a.example.com能匹配b.example.com），"strict" 进行标准的校验。
 # Whether to verify the certificate domains? Set to false for no verification, set to true for loose verification (e.g. a.example.com matches b.example.com), set to "strict" for standard verification.
@@ -68,7 +68,6 @@ nameserver = [
 
 "pixiv.net/" = "www.pixiv.net/"
 "www.google.com/recaptcha/" = "www.recaptcha.net/recaptcha/"
-"tumblr.com/" = "www.tumblr.com/"
 "instagram.com/" = "www.instagram.com/"
 "nicovideo.jp/" = "www.nicovideo.jp/"
 "twitch.tv/" = "www.twitch.tv/"
@@ -80,7 +79,6 @@ nameserver = [
 # A TLS connection to the domain corresponding to the key will use the domain name corresponding to its value as the server_name field, and this domain name is also used when verifying the certificate. The key supports Unix shell-style wildcards.
 
 "www.quora.com" = "fs.quoracdn.net"
-"sketch.pixiv.net" = "pixivsketch.net"
 "nyaa.si" = "ddos-guard.net"
 "steamcommunity.com" = "www.valvesoftware.com"
 "gn-web-assets.api.bbc.com" = "static-web-assets.gnl-common.bbcverticals.com"
@@ -97,15 +95,14 @@ nameserver = [
 "*.1lib.sk" = ["1lib.fr", "1lib.sk", "singlelogin.re"]
 "singlelogin.re" = ["1lib.fr", "1lib.sk", "singlelogin.re"]
 "*.singlelogin.re" = ["1lib.fr", "1lib.sk", "singlelogin.re"]
-"scratch.mit.edu" = ["scratchfoundation.map.fastly.net"]
-"*.scratch.mit.edu" = ["scratchfoundation.map.fastly.net"]
+"scratch.mit.edu" = ["d.sni-645-default.ssl.fastly.net"]
+"*.scratch.mit.edu" = ["d.sni-645-default.ssl.fastly.net"]
 "*.euronews.com" = ["fastly.com"]
 "mega.io" = ["static.mega.co.nz"]
 "bandcamp.com" = ["fastly.com"]
 "*.bandcamp.com" = ["fastly.com"]
 "nytimes.com" = ["fastly.com"]
-"cn.nytimes.com" = ["cloudfront.com"]
-"*.nytimes.com" = ["fastly.com"]
+"*.nytimes.com" = ["fastly.com", "cloudfront.net"]
 "reddit.com" = ["fastly.com"]
 "*.reddit.com" = ["fastly.com"]
 "redd.it" = ["fastly.com"]
@@ -117,13 +114,12 @@ nameserver = [
 "*.redditinc.com" = ["fastly.com"]
 "mastodon.social" = ["fastly.com"]
 "*.mastodon.social" = ["fastly.com"]
-"gql.twitch.tv" = ["fastly.com"]
-"pubsub-edge.twitch.tv" = ["external-2.us-west-2.prod.twitchpubsubedge.twitch.a2z.com"]
-"irc-ws.chat.twitch.tv" = ["websocket-7.us-west-2.prod.twitchircedge.twitch.a2z.com"]
-"*.twitch.tv" = ["twitch.tv", "cloudfront.net"]
+ "*.twitch.tv" = ["twitch.tv", "cloudfront.net","twitch.a2z.com", "fastly.com", "visioncritical.com", "imgix.net", "discourse.org", "bit.ly"]
 "nicovideo.jp" = ["cloudfront.net"]
-"qa.nicovideo.jp" = ["qa.nicovideo.jp"]
-"*.nicovideo.jp" = ["cloudfront.net"]
+"*.nicovideo.jp" = ["cloudfront.net", "nicovideo.jp"]
+"onedrive.live.com" = ["azureedge.net"]
+"*.github.com" = ["github.com", "githubassets.com", "githubusercontent.com"]
+"*.pixiv.net" = ["pixiv.net", "firebaseapp.com", "cloudfront.net", "tumblr.com"]
 
 
 [hosts]
@@ -135,10 +131,17 @@ nameserver = [
 "dot.sb" = "185.222.222.222"
 # "dns.adguard-dns.com" = "94.140.14.14"
 
-"sketch.pixiv.net" = "210.140.174.37"
-"img-sketch.pixiv.net" = "210.140.131.145"
+"pixiv.net" = "pixiv.me"
+"www.pixiv.net" = "pixiv.me"
+"sketch.pixiv.net" = "pixiv.me"
+"accounts.pixiv.net" = "pixiv.me"
+"imp.pixiv.net" = "pixiv.me"
+"oauth.secure.pixiv.net" = "pixiv.me"
+"factory.pixiv.net" = "pixiv.me"
+"embed.pixiv.net" = "pixiv.me"
+"engineering.pixiv.net" = "pixiv.me"
+"comic.pixiv.net" = "210.140.131.153"
 "source.pixiv.net" = "210.140.131.153"
-".pixiv.net" = "pixivision.net"
 "i.pximg.net" = "pximg.net"
 "www.bbc.co.uk" = "212.58.233.252"
 "count.wenxuecity.com" = "0.0.0.0"
@@ -149,6 +152,9 @@ nameserver = [
 ".e-hentai.org" = "e-hentai.org.cdn.cloudflare.net"
 "nicovideo.jp" = "futuregadget-lab.com"
 "qa.nicovideo.jp" = "124.146.170.109"
+"stella.nicovideo.jp" = "35.76.249.201"
+# "stella.nicovideo.jp" = "18.177.234.25"
+# "stella.nicovideo.jp" = "18.176.65.249"
 ".nicovideo.jp" = "futuregadget-lab.com"
 "bandcamp.com" = "fastly.com"
 ".bandcamp.com" = "fastly.com"
@@ -201,16 +207,31 @@ nameserver = [
 ".scratch.mit.edu" = "scratchfoundation.map.fastly.net"
 "archive.org" = "207.241.224.27"
 "mastodon.social" = "fastly.com"
-"*.mastodon.social" = "fastly.com"
-"singlelogin.re" = "176.123.7.105"
-".singlelogin.re" = "176.123.7.105"
-"1lib.sk" = "176.123.7.105"
-".1lib.sk" = "176.123.7.105"
-"gql.twitch.tv" = "fastly.com"
+"*.mastodon.social" = "fastly.com" 
 "assets.twitch.tv" = "futuregadget-lab.com"
 "vod-secure.twitch.tv" = "futuregadget-lab.com"
+"vod-metro.twitch.tv" = "futuregadget-lab.com"
+"vod-storyboards.twitch.tv" = "futuregadget-lab.com"
 "extension-files.twitch.tv" = "futuregadget-lab.com"
 "panels.twitch.tv" = "futuregadget-lab.com"
 "clips-media-assets2.twitch.tv" = "futuregadget-lab.com"
 "extensions-discovery-images.twitch.tv" = "futuregadget-lab.com"
 "passport.twitch.tv" = "futuregadget-lab.com"
+"brand.twitch.tv" = "futuregadget-lab.com"
+"meetups.twitch.tv" = "futuregadget-lab.com"
+"affiliate.twitch.tv" = "futuregadget-lab.com"
+"ttv-redirect.m7g.twitch.tv" = "futuregadget-lab.com"
+"blog.twitch.tv" = "futuregadget-lab.com"
+"streamon.twitch.tv" = "futuregadget-lab.com"
+"rivals.twitch.tv" = "futuregadget-lab.com"
+"bits.twitch.tv" = "futuregadget-lab.com"
+"mew.twitch.tv" = "futuregadget-lab.com"
+"mobile.twitch.tv" = "futuregadget-lab.com"
+".event-engineering.twitch.tv" = "futuregadget-lab.com"
+"mi.twitch.tv" = "futuregadget-lab.com"
+"costream.twitch.tv" = "futuregadget-lab.com"
+"id-cdn.twitch.tv" = "futuregadget-lab.com"
+"cvp.twitch.tv" = "futuregadget-lab.com"
+"sings.twitch.tv" = "futuregadget-lab.com"
+"discuss.dev.twitch.tv" = "futuregadget-lab.com"
+"staging.m.twitch.tv" = "fastly.com"
